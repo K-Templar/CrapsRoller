@@ -16,5 +16,10 @@ namespace CrapsRoller
         {
             InitializeComponent();
         }
+
+        private void btnRollDice_Click(object sender, EventArgs e)
+        {
+            RollDice.
+        }
     }
 }
