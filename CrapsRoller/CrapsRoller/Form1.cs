@@ -25,10 +25,60 @@ namespace CrapsRoller
             rolldice.HowMany = 2;
             rolldice.Sided = 6;
             int[] myresult = rolldice.RollMany();
-            lblDie1.Text = myresult[0].ToString();
-            string image = "die_face_" + myresult[0].ToString();
-            //pBoxDie1.Image = DieFaces."die_face_1";
-            lblDie2.Text = myresult[1].ToString();
+            switch (myresult[0])
+            {
+                case 1:
+                    lblDie1.Text = "1";
+                    pBoxDie1.Image = DieFaces.die_face_1;
+                    break;
+                case 2:
+                    lblDie1.Text = "2";
+                    pBoxDie1.Image = DieFaces.die_face_2;
+                    break;
+                case 3:
+                    lblDie1.Text = "3";
+                    pBoxDie1.Image = DieFaces.die_face_3;
+                    break;
+                case 4:
+                    lblDie1.Text = "4";
+                    pBoxDie1.Image = DieFaces.die_face_4;
+                    break;
+                case 5:
+                    lblDie1.Text = "5";
+                    pBoxDie1.Image = DieFaces.die_face_5;
+                    break;
+                case 6:
+                    lblDie1.Text = "6";
+                    pBoxDie1.Image = DieFaces.die_face_6;
+                    break;
+            }
+            switch (myresult[1])
+            {
+                case 1:
+                    lblDie2.Text = "1";
+                    pBoxDie2.Image = DieFaces.die_face_1;
+                    break;
+                case 2:
+                    lblDie2.Text = "2";
+                    pBoxDie2.Image = DieFaces.die_face_2;
+                    break;
+                case 3:
+                    lblDie2.Text = "3";
+                    pBoxDie2.Image = DieFaces.die_face_3;
+                    break;
+                case 4:
+                    lblDie2.Text = "4";
+                    pBoxDie2.Image = DieFaces.die_face_4;
+                    break;
+                case 5:
+                    lblDie2.Text = "5";
+                    pBoxDie2.Image = DieFaces.die_face_5;
+                    break;
+                case 6:
+                    lblDie2.Text = "6";
+                    pBoxDie2.Image = DieFaces.die_face_6;
+                    break;
+            }
         }
     }
 
