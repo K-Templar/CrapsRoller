@@ -67,7 +67,8 @@
             // 
             this.pBoxDie1.Location = new System.Drawing.Point(72, 51);
             this.pBoxDie1.Name = "pBoxDie1";
-            this.pBoxDie1.Size = new System.Drawing.Size(64, 50);
+            this.pBoxDie1.Size = new System.Drawing.Size(64, 64);
+            this.pBoxDie1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pBoxDie1.TabIndex = 3;
             this.pBoxDie1.TabStop = false;
             // 
@@ -75,7 +76,8 @@
             // 
             this.pBoxDie2.Location = new System.Drawing.Point(223, 51);
             this.pBoxDie2.Name = "pBoxDie2";
-            this.pBoxDie2.Size = new System.Drawing.Size(64, 50);
+            this.pBoxDie2.Size = new System.Drawing.Size(64, 64);
+            this.pBoxDie2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pBoxDie2.TabIndex = 4;
             this.pBoxDie2.TabStop = false;
             // 
@@ -83,6 +85,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.ClientSize = new System.Drawing.Size(381, 342);
             this.Controls.Add(this.pBoxDie2);
             this.Controls.Add(this.pBoxDie1);

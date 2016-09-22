@@ -24,9 +24,10 @@ namespace CrapsRoller
         {
             rolldice.HowMany = 2;
             rolldice.Sided = 6;
-            //int result = rolldice.RollOne();
             int[] myresult = rolldice.RollMany();
             lblDie1.Text = myresult[0].ToString();
+            string image = "die_face_" + myresult[0].ToString();
+            //pBoxDie1.Image = DieFaces."die_face_1";
             lblDie2.Text = myresult[1].ToString();
         }
     }
