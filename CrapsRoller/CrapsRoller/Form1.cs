@@ -19,64 +19,93 @@ namespace CrapsRoller
         }
 
         RollDice rolldice = new RollDice();
+        int HowManyTimes = 1;
 
         private void btnRollDice_Click(object sender, EventArgs e)
         {
             rolldice.HowMany = 2;
             rolldice.Sided = 6;
-            int[] myresult = rolldice.RollMany();
-            switch (myresult[0])
+            
+            for (int c = 0; c < HowManyTimes; c++)
             {
-                case 1:
-                    lblDie1.Text = "1";
-                    pBoxDie1.Image = DieFaces.die_face_1;
-                    break;
-                case 2:
-                    lblDie1.Text = "2";
-                    pBoxDie1.Image = DieFaces.die_face_2;
-                    break;
-                case 3:
-                    lblDie1.Text = "3";
-                    pBoxDie1.Image = DieFaces.die_face_3;
-                    break;
-                case 4:
-                    lblDie1.Text = "4";
-                    pBoxDie1.Image = DieFaces.die_face_4;
-                    break;
-                case 5:
-                    lblDie1.Text = "5";
-                    pBoxDie1.Image = DieFaces.die_face_5;
-                    break;
-                case 6:
-                    lblDie1.Text = "6";
-                    pBoxDie1.Image = DieFaces.die_face_6;
-                    break;
+                int[] myresult = rolldice.RollMany();
+                switch (myresult[0])
+                {
+                    case 1:
+                        lblDie1.Text = "1";
+                        pBoxDie1.Image = DieFaces.die_face_1;
+                        break;
+                    case 2:
+                        lblDie1.Text = "2";
+                        pBoxDie1.Image = DieFaces.die_face_2;
+                        break;
+                    case 3:
+                        lblDie1.Text = "3";
+                        pBoxDie1.Image = DieFaces.die_face_3;
+                        break;
+                    case 4:
+                        lblDie1.Text = "4";
+                        pBoxDie1.Image = DieFaces.die_face_4;
+                        break;
+                    case 5:
+                        lblDie1.Text = "5";
+                        pBoxDie1.Image = DieFaces.die_face_5;
+                        break;
+                    case 6:
+                        lblDie1.Text = "6";
+                        pBoxDie1.Image = DieFaces.die_face_6;
+                        break;
+                }
+                switch (myresult[1])
+                {
+                    case 1:
+                        lblDie2.Text = "1";
+                        pBoxDie2.Image = DieFaces.die_face_1;
+                        break;
+                    case 2:
+                        lblDie2.Text = "2";
+                        pBoxDie2.Image = DieFaces.die_face_2;
+                        break;
+                    case 3:
+                        lblDie2.Text = "3";
+                        pBoxDie2.Image = DieFaces.die_face_3;
+                        break;
+                    case 4:
+                        lblDie2.Text = "4";
+                        pBoxDie2.Image = DieFaces.die_face_4;
+                        break;
+                    case 5:
+                        lblDie2.Text = "5";
+                        pBoxDie2.Image = DieFaces.die_face_5;
+                        break;
+                    case 6:
+                        lblDie2.Text = "6";
+                        pBoxDie2.Image = DieFaces.die_face_6;
+                        break;
+                }
+                lblDie1.Refresh();
+                pBoxDie1.Refresh();
+                lblDie2.Refresh();
+                pBoxDie2.Refresh();
             }
-            switch (myresult[1])
+        }
+        
+        private void radioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton btn = sender as RadioButton;
+            switch (btn.Name)
             {
-                case 1:
-                    lblDie2.Text = "1";
-                    pBoxDie2.Image = DieFaces.die_face_1;
+                case "rb1time":
+                    HowManyTimes = 1;
                     break;
-                case 2:
-                    lblDie2.Text = "2";
-                    pBoxDie2.Image = DieFaces.die_face_2;
+                case "rb10times":
+                    HowManyTimes = 10;
                     break;
-                case 3:
-                    lblDie2.Text = "3";
-                    pBoxDie2.Image = DieFaces.die_face_3;
+                case "rb100times":
+                    HowManyTimes = 100;
                     break;
-                case 4:
-                    lblDie2.Text = "4";
-                    pBoxDie2.Image = DieFaces.die_face_4;
-                    break;
-                case 5:
-                    lblDie2.Text = "5";
-                    pBoxDie2.Image = DieFaces.die_face_5;
-                    break;
-                case 6:
-                    lblDie2.Text = "6";
-                    pBoxDie2.Image = DieFaces.die_face_6;
+                case "rb1000times":
+                    HowManyTimes = 1000;
                     break;
             }
         }
