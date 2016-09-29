@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.btnRollDice = new System.Windows.Forms.Button();
             this.lblDie1 = new System.Windows.Forms.Label();
             this.lblDie2 = new System.Windows.Forms.Label();
@@ -37,8 +40,11 @@
             this.rb10times = new System.Windows.Forms.RadioButton();
             this.rb100times = new System.Windows.Forms.RadioButton();
             this.rb1000times = new System.Windows.Forms.RadioButton();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.rb10000times = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxDie1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxDie2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRollDice
@@ -131,12 +137,41 @@
             this.rb1000times.UseVisualStyleBackColor = true;
             this.rb1000times.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(12, 258);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Roll Result";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(490, 300);
+            this.chart1.TabIndex = 9;
+            this.chart1.Text = "chart1";
+            // 
+            // rb10000times
+            // 
+            this.rb10000times.AutoSize = true;
+            this.rb10000times.Location = new System.Drawing.Point(349, 203);
+            this.rb10000times.Name = "rb10000times";
+            this.rb10000times.Size = new System.Drawing.Size(86, 17);
+            this.rb10000times.TabIndex = 10;
+            this.rb10000times.Text = "10000 Times";
+            this.rb10000times.UseVisualStyleBackColor = true;
+            this.rb10000times.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.ClientSize = new System.Drawing.Size(381, 342);
+            this.ClientSize = new System.Drawing.Size(514, 580);
+            this.Controls.Add(this.rb10000times);
+            this.Controls.Add(this.chart1);
             this.Controls.Add(this.rb1000times);
             this.Controls.Add(this.rb100times);
             this.Controls.Add(this.rb10times);
@@ -150,6 +185,7 @@
             this.Text = "Craps Roller!";
             ((System.ComponentModel.ISupportInitialize)(this.pBoxDie1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxDie2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -166,6 +202,8 @@
         private System.Windows.Forms.RadioButton rb10times;
         private System.Windows.Forms.RadioButton rb100times;
         private System.Windows.Forms.RadioButton rb1000times;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.RadioButton rb10000times;
     }
 }
 

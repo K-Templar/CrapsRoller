@@ -25,7 +25,8 @@ namespace CrapsRoller
         {
             rolldice.HowMany = 2;
             rolldice.Sided = 6;
-            
+            int[] DiceRolls = new int[13];
+        
             for (int c = 0; c < HowManyTimes; c++)
             {
                 int[] myresult = rolldice.RollMany();
@@ -87,9 +88,23 @@ namespace CrapsRoller
                 pBoxDie1.Refresh();
                 lblDie2.Refresh();
                 pBoxDie2.Refresh();
-            }
+                int DiceTotal = myresult[0] + myresult[1];
+                DiceRolls[DiceTotal]++;
+             }
+            chart1.Series["Roll Result"].Points.Clear();
+            chart1.Series["Roll Result"].Points.AddXY(2, DiceRolls[2]);
+            chart1.Series["Roll Result"].Points.AddXY(3, DiceRolls[3]);
+            chart1.Series["Roll Result"].Points.AddXY(4, DiceRolls[4]);
+            chart1.Series["Roll Result"].Points.AddXY(5, DiceRolls[5]);
+            chart1.Series["Roll Result"].Points.AddXY(6, DiceRolls[6]);
+            chart1.Series["Roll Result"].Points.AddXY(7, DiceRolls[7]);
+            chart1.Series["Roll Result"].Points.AddXY(8, DiceRolls[8]);
+            chart1.Series["Roll Result"].Points.AddXY(9, DiceRolls[9]);
+            chart1.Series["Roll Result"].Points.AddXY(10, DiceRolls[10]);
+            chart1.Series["Roll Result"].Points.AddXY(11, DiceRolls[11]);
+            chart1.Series["Roll Result"].Points.AddXY(12, DiceRolls[12]);
         }
-        
+
         private void radioButton_CheckedChanged(object sender, EventArgs e)
         {
             RadioButton btn = sender as RadioButton;
@@ -106,6 +121,9 @@ namespace CrapsRoller
                     break;
                 case "rb1000times":
                     HowManyTimes = 1000;
+                    break;
+                case "rb10000times":
+                    HowManyTimes = 10000;
                     break;
             }
         }
