@@ -127,6 +127,11 @@ namespace CrapsRoller
                     break;
             }
         }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 
     public class RollDice
